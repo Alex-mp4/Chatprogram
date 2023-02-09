@@ -8,4 +8,8 @@ public class ClientView {
     private JTextField textField1;
     private JButton sendButton;
     private JList list1;
+
+    public JPanel getPanel() {
+        return panel1;
+    }
 }
