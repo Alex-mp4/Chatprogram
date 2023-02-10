@@ -1,6 +1,7 @@
 package Client;
 
 import javax.swing.*;
+import java.awt.event.ActionListener;
 
 public class ClientView {
     private JTextArea textArea1;
@@ -11,5 +12,25 @@ public class ClientView {
 
     public JPanel getPanel() {
         return panel1;
+    }
+
+    public String getTextField() {
+        return textField1.getText();
+    }
+
+    public JList getList() {
+        return list1;
+    }
+
+    public void setTextArea1(JTextArea textArea1) {
+        this.textArea1 = textArea1;
+    }
+
+    public void setList1(JList list1) {
+        this.list1 = list1;
+    }
+
+    public void setSendButton(ActionListener exportListener) {
+        sendButton.addActionListener(exportListener);
     }
 }
