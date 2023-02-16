@@ -29,7 +29,7 @@ public class ClientModel {
     }
 
     public void addMessage(String msg) {
-        chat += msg + "\n";
+        chat += "Client: " + msg + "\n";
     }
 
     public ClientModel(String ip, int port) {

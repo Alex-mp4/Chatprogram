@@ -15,6 +15,25 @@ public class ServerModel {
     PrintWriter out;
     BufferedReader in;
 
+    String msg = "";
+    String chat = "";
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public String getChat() {
+        return chat;
+    }
+
+    public void addMessage(String msg) {
+        chat += "Server:" + msg + "\n";
+    }
+
     public ServerModel(int port) {
         try {
             server = new ServerSocket(port);

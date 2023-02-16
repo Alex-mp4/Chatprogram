@@ -16,3 +16,9 @@ Framöver ska jag skapa Model. Just nu kräver jag ingen hjälp, men jag lär f�
 3. Jag har brainstormat hur koden bör formateras senare.
 
 Framöver kopplar jag View med resten av koden så att Panel vet vad som händer. Jag kommer nog behöva hjälp med hur meddelanden från TextField blir till text i TextArea.
+
+#### 2023-02-16:
+1. Klienten kan chatta med sig själv
+2. Send knappen fungerar
+
+Min server startar inte sin egna view och jag vet inte varför. Detta behöver jag nog hjälp att hitta problemet på.

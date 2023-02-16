@@ -16,10 +16,21 @@ public class ServerController extends JFrame {
     public ServerController(ServerModel m, ServerView v) {
         this.ServerModel = m;
         this.ServerView = v;
+
+        v.getSendButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ServerModel.setMsg(ServerView.getTextField());
+                ServerModel.addMessage(ServerModel.getMsg());
+                ServerView.setMessage(ServerModel.getChat());
+            }
+        });
+
         this.setContentPane(ServerView.getPanel());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         this.setVisible(true);
+        v.getSendButton();
     }
 
     public static void main(String[] args) {
