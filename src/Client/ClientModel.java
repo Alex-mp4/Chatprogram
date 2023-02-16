@@ -13,6 +13,25 @@ public class ClientModel {
     PrintWriter out;
     BufferedReader in;
 
+    String msg = "";
+    String chat = "";
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public String getChat() {
+        return chat;
+    }
+
+    public void addMessage(String msg) {
+        chat += msg + "\n";
+    }
+
     public ClientModel(String ip, int port) {
         try {
             socket = new Socket(ip,port);
@@ -53,4 +72,6 @@ public class ClientModel {
             e.printStackTrace();
         }
     }
+
+
 }

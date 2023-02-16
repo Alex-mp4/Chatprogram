@@ -1,6 +1,7 @@
 package Client;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ClientView {
@@ -26,11 +27,19 @@ public class ClientView {
         this.textArea1 = textArea1;
     }
 
+    public void setMessage(String c) {
+        textArea1.setText(c);
+    }
+
     public void setList1(JList list1) {
         this.list1 = list1;
     }
 
     public void setSendButton(ActionListener exportListener) {
         sendButton.addActionListener(exportListener);
+    }
+
+    public AbstractButton getSendButton() {
+        return sendButton;
     }
 }

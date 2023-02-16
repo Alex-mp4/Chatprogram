@@ -16,11 +16,22 @@ public class ClientController extends JFrame {
     public ClientController(ClientModel m, ClientView v) {
         this.ClientModel = m;
         this.ClientView = v;
+
+        v.getSendButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ClientModel.setMsg(ClientView.getTextField());
+                ClientModel.addMessage(ClientModel.getMsg());
+                ClientView.setMessage(ClientModel.getChat());
+            }
+        });
+
         this.setContentPane(ClientView.getPanel());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         this.setVisible(true);
-        ClientView.setSendButton(new sendButton());
+        //ClientView.setSendButton(new sendButton());
+        v.getSendButton();
     }
 
     public static void main(String[] args) {
@@ -40,10 +51,10 @@ public class ClientController extends JFrame {
         me.shutDown();
     }
 
-    private class sendButton implements ActionListener {
+    /*private class sendButton implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
 
         }
-    }
+    }*/
 }
