@@ -1,14 +1,16 @@
 package Server;
 
+import com.sun.security.ntlm.Server;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintStream;
 
 public class ServerListenerThread implements Runnable {
     private BufferedReader in;
-    private PrintStream out;
+    private ServerController out;
 
-    public ServerListenerThread(BufferedReader in, PrintStream out) {
+    public ServerListenerThread(BufferedReader in, ServerController out) {
         this.in = in;
         this.out = out;
     }
@@ -22,7 +24,7 @@ public class ServerListenerThread implements Runnable {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            out.println(msg);
+            out.newMessage(msg);
         }
     }
 

@@ -13,6 +13,8 @@ public class ClientModel {
     PrintWriter out;
     BufferedReader in;
 
+    ClientController minChat;
+
     String msg = "";
     String chat = "";
 
@@ -29,7 +31,11 @@ public class ClientModel {
     }
 
     public void addMessage(String msg) {
-        chat += "Client: " + msg + "\n";
+        chat += msg + "\n";
+    }
+
+    public void sendMessage(String msg) {
+        out.println("Client: " + msg);
     }
 
     public ClientModel(String ip, int port) {

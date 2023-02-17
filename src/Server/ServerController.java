@@ -23,6 +23,7 @@ public class ServerController extends JFrame {
                 ServerModel.setMsg(ServerView.getTextField());
                 ServerModel.addMessage(ServerModel.getMsg());
                 ServerView.setMessage(ServerModel.getChat());
+                ServerModel.sendMessage(ServerModel.getMsg());
             }
         });
 
@@ -42,11 +43,16 @@ public class ServerController extends JFrame {
         //ServerModel s = new ServerModel(5858);
         m.acceptClient();
         m.getStreams();
-        ServerListenerThread l = new ServerListenerThread(m.in, System.out);
+        ServerListenerThread l = new ServerListenerThread(m.in, thisIsTheProgram);
         Thread listener = new Thread(l);
         listener.start();
         m.runProtocol();
         listener.stop();
         m.shutdown();
+    }
+
+    public void newMessage(String msg) {
+        ServerModel.addMessage(msg);
+        ServerView.setMessage(ServerModel.getChat());
     }
 }

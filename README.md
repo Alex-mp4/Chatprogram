@@ -22,3 +22,10 @@ Framöver kopplar jag View med resten av koden så att Panel vet vad som händer
 2. Send knappen fungerar
 
 Min server startar inte sin egna view och jag vet inte varför. Detta behöver jag nog hjälp att hitta problemet på.
+
+#### 2023-02-17
+1. Servern kan starta en view och chatta med sig själv (igen)
+2. JAG SKÄMTA BARA
+3. Chatprogrammet fungerar mellan client och server nu
+
+Nästa lektion kommer jag behöva fundera på vilka funktioner som behövs. Kanske lista av "inloggade" personer.

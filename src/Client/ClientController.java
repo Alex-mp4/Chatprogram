@@ -3,15 +3,14 @@ package Client;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.Scanner;
 
 public class ClientController extends JFrame {
     ClientModel ClientModel;
     ClientView ClientView;
+    private BufferedReader in;
+    private PrintStream out;
 
     public ClientController(ClientModel m, ClientView v) {
         this.ClientModel = m;
@@ -23,6 +22,7 @@ public class ClientController extends JFrame {
                 ClientModel.setMsg(ClientView.getTextField());
                 ClientModel.addMessage(ClientModel.getMsg());
                 ClientView.setMessage(ClientModel.getChat());
+                ClientModel.sendMessage(ClientModel.getMsg());
             }
         });
 
@@ -43,12 +43,17 @@ public class ClientController extends JFrame {
         //Client me = new Client("10.80.47.10", 5858);
         //ClientModel me = new ClientModel("10.80.46.47", 1234);
         me.getStreams();
-        ClientListenerThread l = new ClientListenerThread(me.in, System.out);
+        ClientListenerThread l = new ClientListenerThread(me.in, thisIsTheProgram);
         Thread listener = new Thread(l);
         listener.start();
         me.runProtocol();
         listener.stop();
         me.shutDown();
+    }
+
+    public void newMessage(String msg) {
+        ClientModel.addMessage(msg);
+        ClientView.setMessage(ClientModel.getChat());
     }
 
     /*private class sendButton implements ActionListener {

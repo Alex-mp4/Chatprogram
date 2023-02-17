@@ -15,6 +15,8 @@ public class ServerModel {
     PrintWriter out;
     BufferedReader in;
 
+    ServerController ServerController;
+
     String msg = "";
     String chat = "";
 
@@ -31,7 +33,11 @@ public class ServerModel {
     }
 
     public void addMessage(String msg) {
-        chat += "Server:" + msg + "\n";
+        chat += msg + "\n";
+    }
+
+    public void sendMessage(String msg) {
+        out.println("Server: " + msg);
     }
 
     public ServerModel(int port) {
@@ -70,7 +76,7 @@ public class ServerModel {
         String msg = "";
         while (!msg.equals("QUIT")) {
             msg = tgb.nextLine();
-            out.println("SERVER: " + msg);
+            out.println(msg);
         }
     }
 
