@@ -29,3 +29,9 @@ Min server startar inte sin egna view och jag vet inte varför. Detta behöver j
 3. Chatprogrammet fungerar mellan client och server nu
 
 Nästa lektion kommer jag behöva fundera på vilka funktioner som behövs. Kanske lista av "inloggade" personer.
+
+#### 2023-02-23
+1. Client och server kan få name och stoppa in dem i en lokal lista
+2. Skapade artifacts
+
+Jag vet ej hur jag ska skicka namnen mellan client och server. Jag granskade gammal kod för att meddelanden skickades mellan men kom ingen vart.

@@ -15,6 +15,8 @@ public class ClientListenerThread implements Runnable {
 
     @Override
     public void run() {
+        // String name = null;
+        // out.newName(name);
         String msg = null;
         while (true) {
             try {
