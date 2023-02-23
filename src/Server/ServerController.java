@@ -21,9 +21,11 @@ public class ServerController extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ServerModel.setMsg(ServerView.getTextField());
-                ServerModel.addMessage(ServerModel.getMsg());
+                String name = m.getName();
+                ServerModel.addMessage(name + ": " + ServerModel.getMsg());
                 ServerView.setMessage(ServerModel.getChat());
                 ServerModel.sendMessage(ServerModel.getMsg());
+                ServerView.setTextField("");
             }
         });
 
@@ -31,6 +33,7 @@ public class ServerController extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         this.setVisible(true);
+        this.setTitle("Server Chat");
         v.getSendButton();
     }
 
@@ -39,6 +42,9 @@ public class ServerController extends JFrame {
         ServerView v = new ServerView();
         ServerController thisIsTheProgram = new ServerController(m,v);
         thisIsTheProgram.setVisible(true);
+        String name = JOptionPane.showInputDialog("Name:");
+        v.setList(name);
+        m.setName(name);
 
         //ServerModel s = new ServerModel(5858);
         m.acceptClient();

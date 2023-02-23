@@ -20,9 +20,11 @@ public class ClientController extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ClientModel.setMsg(ClientView.getTextField());
-                ClientModel.addMessage(ClientModel.getMsg());
+                String name = m.getName();
+                ClientModel.addMessage(name + ": " + ClientModel.getMsg());
                 ClientView.setMessage(ClientModel.getChat());
                 ClientModel.sendMessage(ClientModel.getMsg());
+                ClientView.setTextField("");
             }
         });
 
@@ -30,6 +32,7 @@ public class ClientController extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         this.setVisible(true);
+        this.setTitle("Client Chat");
         //ClientView.setSendButton(new sendButton());
         v.getSendButton();
     }
@@ -39,6 +42,9 @@ public class ClientController extends JFrame {
         ClientView v = new ClientView();
         ClientController thisIsTheProgram = new ClientController(me,v);
         thisIsTheProgram.setVisible(true);
+        String name = JOptionPane.showInputDialog("Name:");
+        v.setList(name);
+        me.setName(name);
 
         //Client me = new Client("10.80.47.10", 5858);
         //ClientModel me = new ClientModel("10.80.46.47", 1234);

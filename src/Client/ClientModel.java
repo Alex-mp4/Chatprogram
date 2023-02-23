@@ -17,6 +17,7 @@ public class ClientModel {
 
     String msg = "";
     String chat = "";
+    String name = "";
 
     public String getMsg() {
         return msg;
@@ -77,6 +78,14 @@ public class ClientModel {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
     }
 
 
