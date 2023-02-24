@@ -36,7 +36,7 @@ public class ClientModel {
     }
 
     public void sendMessage(String msg) {
-        out.println("Client: " + msg);
+        out.println(msg);
     }
 
     public ClientModel(String ip, int port) {

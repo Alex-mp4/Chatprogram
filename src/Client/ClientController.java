@@ -23,7 +23,7 @@ public class ClientController extends JFrame {
                 String name = m.getName();
                 ClientModel.addMessage(name + ": " + ClientModel.getMsg());
                 ClientView.setMessage(ClientModel.getChat());
-                ClientModel.sendMessage(ClientModel.getMsg());
+                ClientModel.sendMessage(name + ": " + ClientModel.getMsg());
                 ClientView.setTextField("");
             }
         });

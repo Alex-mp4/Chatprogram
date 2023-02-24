@@ -35,3 +35,6 @@ Nästa lektion kommer jag behöva fundera på vilka funktioner som behövs. Kans
 2. Skapade artifacts
 
 Jag vet ej hur jag ska skicka namnen mellan client och server. Jag granskade gammal kod för att meddelanden skickades mellan men kom ingen vart.
+
+#### 2023-02-24
+1. Ja du, jag fixade gårdagens problem

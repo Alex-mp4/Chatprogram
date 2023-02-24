@@ -24,7 +24,7 @@ public class ServerController extends JFrame {
                 String name = m.getName();
                 ServerModel.addMessage(name + ": " + ServerModel.getMsg());
                 ServerView.setMessage(ServerModel.getChat());
-                ServerModel.sendMessage(ServerModel.getMsg());
+                ServerModel.sendMessage(name + ": " + ServerModel.getMsg());
                 ServerView.setTextField("");
             }
         });

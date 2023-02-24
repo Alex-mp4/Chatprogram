@@ -16,6 +16,7 @@
         </constraints>
         <properties>
           <editable value="false"/>
+          <lineWrap value="false"/>
         </properties>
       </component>
       <component id="5ae82" class="javax.swing.JTextField" binding="textField1" default-binding="true">

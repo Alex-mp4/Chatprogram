@@ -38,7 +38,7 @@ public class ServerModel {
     }
 
     public void sendMessage(String msg) {
-        out.println("Server: " + msg);
+        out.println(msg);
     }
 
     public ServerModel(int port) {
