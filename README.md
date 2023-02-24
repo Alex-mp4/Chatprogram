@@ -38,3 +38,5 @@ Jag vet ej hur jag ska skicka namnen mellan client och server. Jag granskade gam
 
 #### 2023-02-24
 1. Ja du, jag fixade gårdagens problem
+
+Stoppa in namn i listan funkar ej

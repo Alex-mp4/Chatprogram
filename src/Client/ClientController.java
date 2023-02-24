@@ -28,6 +28,8 @@ public class ClientController extends JFrame {
             }
         });
 
+
+
         this.setContentPane(ClientView.getPanel());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
