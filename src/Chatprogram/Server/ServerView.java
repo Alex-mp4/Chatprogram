@@ -1,4 +1,4 @@
-package Server;
+package Chatprogram.Server;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;

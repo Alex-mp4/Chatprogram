@@ -1,19 +1,21 @@
-package Client;
+package Chatprogram.Server;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class ClientModel {
-    Socket socket;
+public class ServerModel {
+    ServerSocket server;
+    Socket client;
 
     PrintWriter out;
     BufferedReader in;
 
-    ClientController minChat;
+    ServerController ServerController;
 
     String msg = "";
     String chat = "";
@@ -39,20 +41,30 @@ public class ClientModel {
         out.println(msg);
     }
 
-    public ClientModel(String ip, int port) {
+    public ServerModel(int port) {
         try {
-            socket = new Socket(ip,port);
+            server = new ServerSocket(port);
         } catch (IOException e) {
-            System.err.println("Failed to connect to server");
+            System.err.println("Failed to open serversocket.");
             e.printStackTrace();
         }
-        System.out.println("Connection ready...");
+        System.out.println("Chatprogram.Server started...");
+    }
+
+    public void acceptClient() {
+        try {
+            client = server.accept();
+        } catch (IOException e) {
+            System.err.println("Failed to connect to client");
+            e.printStackTrace();
+        }
+        System.out.println("client connected...");
     }
 
     public void getStreams() {
         try {
-            out = new PrintWriter(socket.getOutputStream(), true);
-            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            out = new PrintWriter(client.getOutputStream(), true);
+            in = new BufferedReader(new InputStreamReader(client.getInputStream()));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -65,16 +77,13 @@ public class ClientModel {
         String msg = "";
         while (!msg.equals("QUIT")) {
             msg = tgb.nextLine();
-            out.println("CLIENT: " + msg);
-
-            //msg = getTextField();
-            //setTextArea1() = msg;
+            out.println(msg);
         }
     }
 
-    public void shutDown() {
+    public void shutdown() {
         try {
-            socket.close();
+            client.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -87,6 +96,4 @@ public class ClientModel {
     public String getName() {
         return this.name;
     }
-
-
 }

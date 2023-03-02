@@ -1,10 +1,7 @@
-package Server;
-
-import com.sun.security.ntlm.Server;
+package Chatprogram.Server;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.PrintStream;
 
 public class ServerListenerThread implements Runnable {
     private BufferedReader in;

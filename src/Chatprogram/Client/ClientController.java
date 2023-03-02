@@ -1,10 +1,9 @@
-package Client;
+package Chatprogram.Client;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.util.Scanner;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -62,7 +61,7 @@ public class ClientController extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         this.setVisible(true);
-        this.setTitle("Client Chat");
+        this.setTitle("Chatprogram.Client Chat");
         //ClientView.setSendButton(new sendButton());
         v.getSendButton();
     }
@@ -76,7 +75,7 @@ public class ClientController extends JFrame {
         v.setList(name);
         me.setName(name);
 
-        //Client me = new Client("10.80.47.10", 5858);
+        //Chatprogram.Client me = new Chatprogram.Client("10.80.47.10", 5858);
         //ClientModel me = new ClientModel("10.80.46.47", 1234);
         me.getStreams();
         ClientListenerThread l = new ClientListenerThread(me.in, thisIsTheProgram);

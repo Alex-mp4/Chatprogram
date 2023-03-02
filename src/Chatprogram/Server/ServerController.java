@@ -1,15 +1,10 @@
-package Server;
+package Chatprogram.Server;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.util.Scanner;
 
 public class ServerController extends JFrame {
     ServerModel ServerModel;
@@ -60,7 +55,7 @@ public class ServerController extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         this.setVisible(true);
-        this.setTitle("Server Chat");
+        this.setTitle("Chatprogram.Server Chat");
         v.getSendButton();
     }
 

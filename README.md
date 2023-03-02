@@ -31,7 +31,7 @@ Min server startar inte sin egna view och jag vet inte varför. Detta behöver j
 Nästa lektion kommer jag behöva fundera på vilka funktioner som behövs. Kanske lista av "inloggade" personer.
 
 #### 2023-02-23
-1. Client och server kan få name och stoppa in dem i en lokal lista
+1. Chatprogram.Client och server kan få name och stoppa in dem i en lokal lista
 2. Skapade artifacts
 
 Jag vet ej hur jag ska skicka namnen mellan client och server. Jag granskade gammal kod för att meddelanden skickades mellan men kom ingen vart.
@@ -40,3 +40,9 @@ Jag vet ej hur jag ska skicka namnen mellan client och server. Jag granskade gam
 1. Ja du, jag fixade gårdagens problem
 
 Stoppa in namn i listan funkar ej och jag vill kunna trycka på "enter" knappen för att skicka ett meddelande i addition till knappen.
+
+#### 2023-03-02
+1. Enter skickar meddelanden nu
+2. Påbörjat en executable package
+
+Att starta två program med en psvm verkar omöjligt, vilken kombination av program det än är. Sorgligt.

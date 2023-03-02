@@ -1,8 +1,7 @@
-package Client;
+package Chatprogram.Client;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.PrintStream;
 
 public class ClientListenerThread implements Runnable {
     private BufferedReader in;
