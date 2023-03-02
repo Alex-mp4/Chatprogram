@@ -41,4 +41,8 @@ public class ServerView {
     public AbstractButton getSendButton() {
         return sendButton;
     }
+
+    public JTextField getEnter() {
+        return textField1;
+    }
 }

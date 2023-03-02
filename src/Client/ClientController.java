@@ -5,6 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.Scanner;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 public class ClientController extends JFrame {
     ClientModel ClientModel;
@@ -25,6 +27,32 @@ public class ClientController extends JFrame {
                 ClientView.setMessage(ClientModel.getChat());
                 ClientModel.sendMessage(name + ": " + ClientModel.getMsg());
                 ClientView.setTextField("");
+            }
+        });
+
+
+        v.getEnter().addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode()==KeyEvent.VK_ENTER){
+                    ClientModel.setMsg(ClientView.getTextField());
+                    String name = m.getName();
+                    ClientModel.addMessage(name + ": " + ClientModel.getMsg());
+                    ClientView.setMessage(ClientModel.getChat());
+                    ClientModel.sendMessage(name + ": " + ClientModel.getMsg());
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if (e.getKeyCode()==KeyEvent.VK_ENTER){
+                    ClientView.setTextField("");
+                }
             }
         });
 

@@ -3,6 +3,8 @@ package Server;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -26,6 +28,31 @@ public class ServerController extends JFrame {
                 ServerView.setMessage(ServerModel.getChat());
                 ServerModel.sendMessage(name + ": " + ServerModel.getMsg());
                 ServerView.setTextField("");
+            }
+        });
+
+        v.getEnter().addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode()==KeyEvent.VK_ENTER){
+                    ServerModel.setMsg(ServerView.getTextField());
+                    String name = m.getName();
+                    ServerModel.addMessage(name + ": " + ServerModel.getMsg());
+                    ServerView.setMessage(ServerModel.getChat());
+                    ServerModel.sendMessage(name + ": " + ServerModel.getMsg());
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if (e.getKeyCode()==KeyEvent.VK_ENTER){
+                    ServerView.setTextField("");
+                }
             }
         });
 

@@ -41,4 +41,12 @@ public class ClientView {
     public AbstractButton getSendButton() {
         return sendButton;
     }
+
+    public void getEnter(ActionListener exportListener) {
+        textField1.addActionListener(exportListener);
+    }
+
+    public JTextField getEnter() {
+        return textField1;
+    }
 }
