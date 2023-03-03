@@ -46,3 +46,9 @@ Stoppa in namn i listan funkar ej och jag vill kunna trycka på "enter" knappen 
 2. Påbörjat en executable package
 
 Att starta två program med en psvm verkar omöjligt, vilken kombination av program det än är. Sorgligt.
+
+#### 2023-03-03
+1. Jadu. Det jag sa innan var en lögn. Multithreading fixade problemet.
+2. Artifact för executable
+
+Programmet känns ganska klart. Det saknas typ en scroll och wrap-around på text, men annars så.
